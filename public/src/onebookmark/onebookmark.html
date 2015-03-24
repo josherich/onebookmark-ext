@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title id="title">One Bookmark</title>
+
+        <!-- Stylesheets -->
+        <link id="favicon" rel="icon" href="">
+        <link rel="stylesheet" type="text/css" href="./bootstrap.css">
+        <link rel="stylesheet" href="./demo.css">
+    </head>
+
+    <body class="no-select" ng-app="groupsApp">
+        <div class="wrapper" ng-controller="groupsCtrl">
+
+          <div class="groups-side">
+            <div id="logo">OB</div>
+
+            <div class="group-add">
+                <label id="group_name_label" for="groupName" ng-show="!groupEditing" ng-click="enableNewCategory()"><span>+</span>New Group</label>
+                <input type="text" class="form-control" id="group_name_new" placeholder="Group name" ng-model="newCategory" ng-show="groupEditing" ng-blur="groupEditing=false">
+            </div>
+
+            <ul>
+              <li ng-repeat="group in groups">
+                <div class="group-title" ng-show="!group.editing" ng-click="showContent(group)">
+
+                  <div ng-bind="group.name" ng-class="{active: group == $parent.group}"></div>
+                  <span class="remove-group" ng-click="removeGroup(group)">-</span>
+                </div>
+
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="list-content">
+                  <div class="category-title-bar">
+                    <p class="title-h1" ng-bind="group.name"></p>
+                    <p class="tags" ng-bind="group.tags.toString()"></p>
+                    <input type="search" ng-model="searchText" ng-change="search()" placeholder="Search">
+                  </div>
+                  <ul data-type="category">
+                    <li ng-repeat="category in group.categories">
+                      <div class="category-title">
+                        <!-- <a href="" class="btn btn-danger btn-xs pull-right" data-nodrag ng-click="removeCategory(group, category)"><i class="glyphicon glyphicon-remove"></i></a> -->
+                        <a href="{{category.url}}" target="_blank" class="cate-title">&nbsp;<span ng-bind="category.title"></span></a>
+                        <span class="cate-url">{{category.url}}</span>
+                      </div>
+                      <div class="category-topics" ng-show="category.topics">
+                        <span ng-repeat="topic in category.topics">{{topic}}</span>
+                      </div>
+                      <div class="category-more">
+                        <span>...</span>
+                        <ul>
+                          <li ng-click="removeCategory(group, category)">Delete</li>
+                          <li ng-click="move(category)">Move</li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+
+          </div>
+
+        </div>
+
+        <script src="./jquery.min.js"></script>
+        <script src="./angular.js"></script>
+        <script src="./firebase.js"></script>
+        <script src="./angularfire.js"></script>
+        <script type="text/javascript" src="./app.js"></script>
+
+    </body>
+</html>

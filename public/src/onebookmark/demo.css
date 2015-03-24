@@ -1,0 +1,321 @@
+html,
+body
+{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+
+    height: 100%;
+}
+.wrapper
+{
+    height: 100%;
+}
+ul,
+li
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.groups-side
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 200px;
+    height: 100%;
+
+    background: #292d34;
+}
+input
+{
+    border: none;
+    box-shadow: none;
+}
+#logo
+{
+    padding: 18px;
+
+    color: white;
+    background: #25272e;
+}
+.group-add
+{
+    position: absolute;
+    top: 16px;
+    right: 0;
+}
+#group_name_label
+{
+    font-size: 12px;
+
+    padding-right: 1em;
+
+    cursor: pointer;
+
+    color: #919191;
+}
+#group_name_label span
+{
+    font-size: 16px;
+
+    margin-right: .3em;
+}
+#group_name_new
+{
+    position: absolute;
+    right: 10px;
+
+    width: 120px;
+    height: 26px;
+
+    border: none;
+    border-radius: 13px;
+    box-shadow: none;
+}
+.groups-side > ul
+{
+    padding: 10px;
+}
+
+.groups-side > ul > li
+{
+    padding: 10px 0;
+    padding-left: 1em;
+
+    cursor: pointer;
+}
+.groups-side > ul > li div
+{
+    font-size: 14px;
+
+    position: relative;
+
+    text-transform: capitalize;
+
+    color: #919191;
+}
+.groups-side > ul > li div.active
+{
+    color: white;
+}
+.groups-side > ul > li div .remove-group
+{
+    display: none;
+}
+.groups-side > ul > li div:hover .remove-group
+{
+    line-height: 6.8px;
+
+    position: absolute;
+    top: 5px;
+    right: 4px;
+
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+    padding-left: 1.8px;
+
+    border: 1px solid;
+    border-radius: 50%;
+}
+.groups-side > ul > li:hover div
+{
+    color: white;
+}
+
+.list-content
+{
+    overflow: auto;
+
+    height: 100%;
+    margin-left: 200px;
+}
+
+.list-content > ul > li
+{
+    position: relative;
+
+    height: 100px;
+    padding: 20px 0 20px 16px;
+
+    border-bottom: 1px solid #efefef;
+}
+.category-title-bar
+{
+    position: relative;
+
+    padding: 10px 0 10px 20px;
+
+    border-bottom: 1px solid #efefef;
+}
+.category-title-bar p
+{
+    font-size: 2em;
+
+    display: inline-block;
+
+    text-transform: capitalize;
+
+    color: #545454;
+}
+.category-title-bar .tags
+{
+    display: none;
+}
+.category-title-bar:hover .tags
+{
+    font-size: 12px;
+
+    display: inline-block;
+
+    margin-left: 10px;
+
+    color: #888;
+}
+.category-title-bar input
+{
+    position: absolute;
+    top: 1.6em;
+    right: 2em;
+
+    height: 26px;
+    padding-left: 1em;
+
+    border: 1px solid #bbb;
+    border-radius: 13px;
+    outline: none;
+}
+.cate-title
+{
+    color: #282828;
+}
+.cate-title span
+{
+    display: inline-block;
+    overflow: hidden;
+
+    max-width: 500px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.cate-url
+{
+    display: inline-block;
+    overflow: hidden;
+
+    max-width: 290px;
+
+    vertical-align: top;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: #a8a8a8;
+}
+.category-topics span
+{
+    font-size: 12px;
+
+    padding: 2px 4px;
+
+    color: #888;
+}
+.category-more
+{
+    position: absolute;
+    top: 15px;
+    right: 51px;
+
+    width: 60px;
+}
+.category-more:hover ul
+{
+    display: block;
+}
+.category-more span
+{
+    font-size: 1.5em;
+
+    cursor: pointer;
+}
+.category-more ul
+{
+    display: none;
+
+    margin-top: 5px;
+
+    color: #888;
+}
+.category-more ul li
+{
+    cursor: pointer;
+}
+.category-more ul li:hover
+{
+    color: #333;
+}
+.cate-url
+{
+    color: #a1a1a1;
+}
+
+#query
+{
+    width: 100%;
+}
+
+#import_content
+{
+    width: 100%;
+}
+.btn
+{
+    margin-right: 8px;
+}
+
+.tag-block
+{
+    display: inline-block;
+
+    margin: 3px;
+    padding: 3px 6px;
+
+    cursor: pointer;
+
+    border: 1px solid #dae2ea;
+    border-radius: 3px;
+    background: #f8faff;
+}
+.tag-block.selected
+{
+    background: #ccc;
+}
+
+.angular-ui-tree-handle
+{
+    padding: 10px 10px;
+
+    color: #7c9eb2;
+    border: 1px solid #dae2ea;
+    background: #f8faff;
+}
+
+.angular-ui-tree-handle:hover
+{
+    color: #438eb9;
+    border-color: #dce2e8;
+    background: #f4f6f7;
+}
+
+.angular-ui-tree-placeholder
+{
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+    border: 2px dashed #bed2db;
+    background: #f0f9ff;
+}
